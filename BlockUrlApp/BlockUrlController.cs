@@ -78,8 +78,6 @@ namespace BlockUrlApp
          {
             string absoluteUri = evt.HttpClient.Request.RequestUri.AbsoluteUri;
 
-            HeaderCollection headers = evt.HttpClient.Request.Headers;
-
             if(BlockedUrl.AsEnumerable().Any(x => absoluteUri.Contains(x)))
             {
                evt.Ok("<!DOCTYPE html><html><body style='text-align: center;'><h1>Website Blocked</h1><p>This site has been blocked by Admin. Please contact Admin for more info.</p></body></html>");
